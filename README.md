@@ -7,8 +7,10 @@ Choose a directory to host the crawler, and run the following commands:
 
 `git clone https://github.com/declanrjb/higher-ed-investigations-crawler.git`
 
-Open update-and-send.ipynb and update the `recipients` list with your own email address and/or the addresses
+Open `update-and-send.ipynb` and update the `recipients` list with your own email address and/or the addresses
 of any other recipients.
+
+Obtain a [SendGrid](https://sendgrid.com/en-us) API key and store it in `sendgrid.env` in the notebooks directory with the specification `SENDGRID_API_KEY=<your-key>`
 
 Then, run:
 
