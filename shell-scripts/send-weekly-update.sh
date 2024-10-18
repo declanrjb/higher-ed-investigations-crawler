@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /Users/declanbradley/Documents/Work/Journalism/Chronicle/higher-ed-investigations-crawler/shell-scripts/
 cd ../notebooks
-jupyter nbconvert --to python update-and-send.ipynb
+update-and-send.ipynb -m jupyter nbconvert --to python 
 python3 update-and-send.py
 cd ..
 git add *
