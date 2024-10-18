@@ -1,8 +1,16 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[10]:
-
+# ---
+# jupyter:
+#   jupytext:
+#     text_representation:
+#       extension: .py
+#       format_name: light
+#       format_version: '1.5'
+#       jupytext_version: 1.16.4
+#   kernelspec:
+#     display_name: Python 3
+#     language: python
+#     name: python3
+# ---
 
 import requests
 import pandas as pd
@@ -14,16 +22,10 @@ from datetime import date
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
-
-# In[ ]:
-
-
 load_dotenv('sendgrid.env')
 
 
-# In[11]:
-
-
+# +
 def data_from_row(row):
     row_data = {}
     for cell in row.select('td'):
@@ -45,8 +47,7 @@ def scrape_page(page):
     return df
 
 
-# In[12]:
-
+# -
 
 params = {
     'field_ois_state':'All',
@@ -61,10 +62,6 @@ params = {
     'field_open_investigation_date_3':'',
 }
 
-
-# In[13]:
-
-
 tables = []
 for i in range(0,99999999):
     page = retrieve_page(i,params)
@@ -72,10 +69,6 @@ for i in range(0,99999999):
         tables.append(scrape_page(page))
     else:
         break
-
-
-# In[ ]:
-
 
 if len(tables) > 0:
     df = pd.concat(tables)
@@ -95,4 +88,3 @@ if len(tables) > 0:
         sg.send(message)
     except Exception as e:
         print(e.message)
-
