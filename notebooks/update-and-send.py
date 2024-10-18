@@ -78,6 +78,8 @@ if len(tables) > 0:
     for col in ['STATE','INST','DISCRIMINATION_TYPE']:
         df[col] = df[col].str.strip()
 
+    df.to_csv(f'../data/weekly-logs/{str(date.today() - datetime.timedelta(days=7))}_{str(date.today())}.csv')
+
     message = Mail(
         from_email='declan@declanrjb.com',
         to_emails='dbradley@chronicle.com',
