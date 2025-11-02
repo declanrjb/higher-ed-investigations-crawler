@@ -1,6 +1,6 @@
 Simple Python-based scraper to send an email alert to the specified recipients whenever the U.S. Department of Ed opens
 a new investigation into one or more colleges. Email alerts include a one line summary and an in-message table of the new
-investigations - including their subjects, targets, and initiation dates.
+investigations - including their subjects, targets, and initiation dates. Initially developed for newsroom use by *The Chronicle of Higher Education*.
 
 ## Installation
 Choose a directory to host the crawler, and run the following commands:
